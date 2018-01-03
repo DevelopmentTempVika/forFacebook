@@ -1,0 +1,8 @@
+com\asenwer93\sber\helpers\DriverManager.class
+com\asenwer93\sber\pages\market\YandexMarketPage.class
+com\asenwer93\sber\pages\market\YandexMarketTabletsPage$2.class
+com\asenwer93\sber\pages\market\YandexMarketTabletsPage.class
+com\asenwer93\sber\pages\YandexSearchPage.class
+com\asenwer93\sber\pages\AbstractPage.class
+com\asenwer93\sber\BrowserManagement.class
+com\asenwer93\sber\pages\market\YandexMarketTabletsPage$1.class
