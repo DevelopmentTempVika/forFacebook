@@ -1,5 +1,6 @@
 package com.asenwer93.sber.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,6 +25,7 @@ public class YandexSearchPage extends AbstractPage {
      * Загрузка главной страницы яндекса
      * @return этот объект
      */
+    @Step
     public YandexSearchPage load(){
         driver.navigate().to(URL);
         //wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//")));
@@ -35,6 +37,7 @@ public class YandexSearchPage extends AbstractPage {
      * Перейти в маркет
      * @return этот объект
      */
+    @Step
     public YandexSearchPage goToMarket(){
         for (WebElement element : homeTabs){
             if (element.getText().equals("Маркет")) {

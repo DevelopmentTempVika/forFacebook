@@ -1,6 +1,7 @@
 package com.asenwer93.sber.pages.market;
 
 import com.asenwer93.sber.pages.AbstractPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,6 +29,7 @@ public class YandexMarketPage extends AbstractPage {
      * @param category имя категории
      * @return этот объект
      */
+    @Step
     public YandexMarketPage goToCategory(String category){
         WebElement element = driver.findElement(By.xpath("//*/a[text()='" + category + "']"));
         element.click();
@@ -40,6 +42,7 @@ public class YandexMarketPage extends AbstractPage {
      * @param subcategory имя подкатегории
      * @return этот объект
      */
+    @Step
     public YandexMarketPage goToTheSubcategory(String subcategory){
         for (WebElement element : subcategoryItems){
             if (element.getText().equals(subcategory)) {

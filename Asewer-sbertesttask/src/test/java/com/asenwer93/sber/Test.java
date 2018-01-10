@@ -4,14 +4,12 @@ import com.asenwer93.sber.helpers.DriverManager;
 import com.asenwer93.sber.pages.market.YandexMarketPage;
 import com.asenwer93.sber.pages.YandexSearchPage;
 import com.asenwer93.sber.pages.market.YandexMarketTabletsPage;
-import org.testng.annotations.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.ErrorCollector;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import ru.yandex.qatools.allure.annotations.Description;
-import ru.yandex.qatools.allure.annotations.Title;
 
 import static org.hamcrest.CoreMatchers.is;
 
@@ -29,20 +27,18 @@ public class Test {
     public ErrorCollector collector = new ErrorCollector();
 
 
-    @BeforeClass
-    public static void setUp(){
+    @Before
+    public void setUp(){
         driver = DriverManager.getDriver();
         wait = new WebDriverWait(driver, 10);
 
     }
 
-    @AfterClass
-    public static void tearDown() {
+    @After
+    public void tearDown() {
         DriverManager.getDriver().quit();
     }
 
-    @Title("Поиск по параметрам")
-    @Description("Ввод параметров поиска и проверка количества элементов на странице")
     @org.junit.Test
     public void test1(){
         browserManagement = new BrowserManagement();
@@ -65,9 +61,6 @@ public class Test {
         collector.checkThat(yandexMarketTabletsPage.amountOfElements(), is(10));
     }
 
-    @Title("Поиск по имени")
-    @Description("Ввод названия первого найденного элемента в поисковую строку и проверка названия на соответствие" +
-            " с первым элементом после поиска")
     @org.junit.Test
     public void test2(){
         String expected = yandexMarketTabletsPage.getNameElement(0);

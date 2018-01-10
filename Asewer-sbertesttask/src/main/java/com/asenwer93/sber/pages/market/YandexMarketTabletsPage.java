@@ -1,6 +1,7 @@
 package com.asenwer93.sber.pages.market;
 
 import com.asenwer93.sber.pages.AbstractPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -42,6 +43,7 @@ public class YandexMarketTabletsPage extends AbstractPage {
      *  Перейти ко всем фильтрам(расширенный поиск)
      * @return этот объект
      */
+    @Step
     public YandexMarketTabletsPage goToAllFilters(){
         goToAllFilters.click();
 
@@ -55,6 +57,7 @@ public class YandexMarketTabletsPage extends AbstractPage {
      * @param to до
      * @return этот объект
      */
+    @Step
     public YandexMarketTabletsPage setPrice(int from, int to){
         priceFrom.sendKeys(Integer.toString(from));
         priceTo.sendKeys(Integer.toString(to));
@@ -68,6 +71,7 @@ public class YandexMarketTabletsPage extends AbstractPage {
      * @param company название компании
      * @return этот объект
      */
+    @Step
     public YandexMarketTabletsPage setCompany(String company){
         WebElement searchInput = driver.findElement(By.xpath("//*/span[text()='Производитель']/../../..//input[contains(@class, 'input__control')]"));
         searchInput.clear();
@@ -85,6 +89,7 @@ public class YandexMarketTabletsPage extends AbstractPage {
      * Вызывать после goToAllFilters()
      * @return этот объект
      */
+    @Step
     public YandexMarketTabletsPage showAllCompany(){
         WebElement elementShowAllCompany = driver.findElement(By.xpath("//*/button/span[text()='Показать всё']/.."));
         elementShowAllCompany.click();
