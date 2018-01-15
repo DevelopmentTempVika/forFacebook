@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: com.asenwer93.sber.Test
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 20.291 s <<< FAILURE! - in com.asenwer93.sber.Test
+test1(com.asenwer93.sber.Test)  Time elapsed: 16.539 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: is <10>
+     but: was <12>
+	at com.asenwer93.sber.Test.test1(Test.java:61)
+
+test2(com.asenwer93.sber.Test)  Time elapsed: 0 s  <<< ERROR!
+org.openqa.selenium.NoSuchSessionException: 
+Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
+System info: host: 'VIKA', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_152'
+Driver info: driver.version: RemoteWebDriver
+	at com.asenwer93.sber.Test.test2(Test.java:66)
+
